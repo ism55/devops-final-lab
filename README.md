@@ -18,3 +18,5 @@ Descripción del workflow CI/CD
 Herramientas y tecnologías usadas
 Instrucciones de setup/ejecución o despliegue
 Pantallazos de los dashboards de monitoring y el porque de las métricas elegidas
+
+![CI Matrix](https://github.com/ism55/devops-final-lab/actions/workflows/ci.yaml/badge.svg)
