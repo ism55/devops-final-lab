@@ -63,7 +63,7 @@ jobs:
         echo "|----|---------|--------|" >> $GITHUB_STEP_SUMMARY
         
         for version in 3.10 3.12; do
-          if [ -d "test-results/test-results-$result-$version" ]; then
+          if [ -d "test-results/test-results-ubuntu-latest-$version" ]; then
             echo "| ubuntu-latest | $version | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
           else
             echo "| ubuntu-latest | $version | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
