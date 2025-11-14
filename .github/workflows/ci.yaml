@@ -19,8 +19,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-latest ]
-        python-version: [ "3.12" ]
+        os: [ ubuntu-latest ]
+        python-version: [ "3.10", "3.12" ]
     steps:
       - uses: actions/checkout@v4
 
@@ -62,10 +62,10 @@ jobs:
         echo "| OS | Python | Status |" >> $GITHUB_STEP_SUMMARY
         echo "|----|---------|--------|" >> $GITHUB_STEP_SUMMARY
         
-        for result in ubuntu-latest windows-latest; do
-          if [ -d "test-results/test-results-$result-3.12" ]; then
-            echo "| $result | 3.12 | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+        for version in 3.10 3.12; do
+          if [ -d "test-results/test-results-$result-$version" ]; then
+            echo "| ubuntu-latest | $version | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
           else
-            echo "| $result | 3.12 | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
+            echo "| ubuntu-latest | $version | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
           fi
         done   
